@@ -136,8 +136,9 @@
 </div>
 <!--Footer-->
 <div class="modal-footer">
+    <button mat-raised-button color="warn" (click)="( modalData?.action.label )">Delete</button>
     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-    <button class="btn btn-primary">Checkout</button>
+    <button mat-raised-button color="primary">Checkout</button>
 </div>
   <!-- <div class="modal-body">
     <div>
@@ -209,21 +210,25 @@
 </div>
 <br>
 
-<!-- <ng-template #customCellTemplate let-day="day" let-locale="locale">
+
+<!-- 
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
 	  <div class="cal-cell-top">
 	    <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span>
 	    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
 	  </div>
 	  <small style="margin: 5px">There are {{ day.events.length }} events on this day</small>
-	</ng-template>
+</ng-template>
 
-	<ng-template #eventTemplate let-weekEvent="weekEvent" let-locale="locale">
+<ng-template #eventTemplate let-weekEvent="weekEvent" let-locale="locale">
             {{weekEvent.event.meta.description}}
-        </ng-template> -->
+</ng-template>
 
-<!--     <ng-template #eventTitleTemplate let-dayEvent="dayEvent" let-locale="locale">
+<ng-template #eventTitleTemplate let-dayEvent="dayEvent" let-locale="locale">
             {{dayEvent.event.meta.description}}
-        </ng-template> -->
+</ng-template>
+ -->
+
 
 <div [ngSwitch]="view">
   <mwl-calendar-month-view

@@ -11,8 +11,25 @@
       <pre>{{ modalData?.action }}</pre>
     </div>
     <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
+      <b>Event:</b><br/>
+      
+      <pre>
+        Title:&emsp;{{ modalData?.event.title }}
+      </pre>
+
+      <pre>
+        StartDate:&emsp;{{ modalData?.event.start }}
+      </pre>
+
+      <pre>
+        EndDate:&emsp;{{ modalData?.event.end }}
+      </pre>
+
+      <!-- <pre>
+        Actions:&emsp;{{ modalData?.event. }}
+      </pre> -->
+
+
     </div>
   </div>
   <div class="modal-footer">
