@@ -1,0 +1,299 @@
+<div class="row">
+<div class="col-md-8">
+<mat-card>
+
+
+
+<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Product name</th>
+                            <th>Price</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>{{ modalData?.action.title }}</td>
+                            <td>100$</td>
+                            <td><a><i class="fa fa-remove"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Product 2</td>
+                            <td>100$</td>
+                            <td><a><i class="fa fa-remove"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Product 3</td>
+                            <td>100$</td>
+                            <td><a><i class="fa fa-remove"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Product 4</td>
+                            <td>100$</td>
+                            <td><a><i class="fa fa-remove"></i></a></td>
+                        </tr>
+                        <tr class="total">
+                            <th scope="row">5</th>
+                            <td>Total</td>
+                            <td>400$</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Event action occurred</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Title:</th>
+                <td>{{ modalData?.event.title }}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Start:</th>
+                <td>{{ modalData?.event.start }}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">End:</th>
+                <td>{{ modalData?.event.end }}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Description:</th>
+                <td><h2><span class="badge">v52gs1</span></h2></td>
+
+            </tr>
+            <tr>
+                <th scope="row">Subject</th>
+                <td>{{ modalData?.event.meta }}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">State</th>
+                <td>{{ modalData?.event.meta.state }}</td>
+
+            </tr>
+            <tr class="total">
+                <th scope="row">Priority</th>
+                <td>{{ modalData?.event.meta.priority }}</td>
+
+            </tr>
+            <tr class="total">
+                <th scope="row">Resolution</th>
+                <td>{{ modalData?.event.meta.resolution }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!--Footer-->
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary">Checkout</button>
+</div>
+  <!-- <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Event:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
+  </div> -->
+</ng-template>
+
+<div class="row text-center">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-primary"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="activeDayIsOpen = false">
+        Previous
+      </div>
+      <div
+        class="btn btn-outline-secondary"
+        mwlCalendarToday
+        [(viewDate)]="viewDate">
+        Today
+      </div>
+      <div
+        class="btn btn-primary"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="activeDayIsOpen = false">
+        Next
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-primary"
+        (click)="view = 'month'"
+        [class.active]="view === 'month'">
+        Month
+      </div>
+      <div
+        class="btn btn-primary"
+        (click)="view = 'week'"
+        [class.active]="view === 'week'">
+        Week
+      </div>
+      <div
+        class="btn btn-primary"
+        (click)="view = 'day'"
+        [class.active]="view === 'day'">
+        Day
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<!-- <ng-template #customCellTemplate let-day="day" let-locale="locale">
+	  <div class="cal-cell-top">
+	    <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span>
+	    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+	  </div>
+	  <small style="margin: 5px">There are {{ day.events.length }} events on this day</small>
+	</ng-template>
+
+	<ng-template #eventTemplate let-weekEvent="weekEvent" let-locale="locale">
+            {{weekEvent.event.meta.description}}
+        </ng-template> -->
+
+<!--     <ng-template #eventTitleTemplate let-dayEvent="dayEvent" let-locale="locale">
+            {{dayEvent.event.meta.description}}
+        </ng-template> -->
+
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-day-view>
+</div>
+</mat-card>
+</div>
+<div class="col-md-4">
+		<mat-card>
+	<button
+	    class="btn btn-primary pull-right"
+	    (click)="addEvent()">
+	    Add new
+	  </button>
+	<div>
+		<div class="row" (ngSubmit)="addEvent()">
+			
+				<div class="col-md-6 form-group">
+
+				
+				  <mat-form-field>
+				    <input matInput type="text"
+			          [(ngModel)]="event.title"
+			          (keyup)="refresh.next()">
+				  </mat-form-field>
+				</div>
+
+				<div class="col-md-6 form-group">
+				<br>
+				  <mwl-demo-utils-date-time-picker
+			          [(ngModel)]="event.start"
+			          (ngModelChange)="refresh.next()"
+			          placeholder="Not set">
+			        </mwl-demo-utils-date-time-picker><br>
+
+				   <mwl-demo-utils-date-time-picker
+			          [(ngModel)]="event.end"
+			          (ngModelChange)="refresh.next()"
+			          placeholder="Not set">
+			        </mwl-demo-utils-date-time-picker>
+			    </div>
+
+			    <button class="btn btn-primary pull-right" type="submit" >add event</button>
+
+	   	</div><br>
+	</div>
+	</mat-card>
+</div>
+</div>

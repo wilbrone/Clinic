@@ -1,0 +1,56 @@
+<mat-card-subtitle>
+	Immunization History
+</mat-card-subtitle><hr>
+<mat-card-content>
+<form (ngSubmit)="addImmunization()">
+  <div class="row">
+    <div class="col-md-6">
+
+        <mat-form-field>
+          <input matInput type="text" name="name" [(ngModel)]="immunization.name" placeholder="name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="type" [(ngModel)]="immunization.type" placeholder="type">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="vaccine_status" [(ngModel)]="immunization.vaccine_status" placeholder="vaccine status">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="vaccinator" [(ngModel)]="immunization.vaccinator" placeholder="vaccinator">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="date" [(ngModel)]="immunization.date" placeholder="date">
+        </mat-form-field>
+
+    </div>
+    <div class="col-md-6">
+
+        <mat-form-field>
+          <input matInput type="text" name="lot_number" [(ngModel)]="immunization.lot_no" placeholder="lot number">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="cvx_code" [(ngModel)]="immunization.cvx_code" placeholder="cvx code">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="cvx_short_description" [(ngModel)]="immunization.cvx_short_description" placeholder="cvx short description">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="funding_source" [(ngModel)]="immunization.funding_source" placeholder="funding source">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" name="note" [(ngModel)]="immunization.note" placeholder="note">
+        </mat-form-field>
+
+    </div>
+  </div>
+  <button mat-raised-button type="submit" color="accent"> submit vitals</button>
+</form>
+</mat-card-content>

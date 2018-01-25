@@ -1,0 +1,42 @@
+<!-- <ul *ngFor = "let phys of physical_exams">
+ 	<li>1/21/17
+ 		<ul>
+    		<li><p>Chest Pain.</p></li>
+    		<li><p>paroxysmal nocturnal dyspnea </p></li>
+    		<li><p>{{phys.abdomen}}</p></li>
+
+    	</ul>
+ 	</li>
+</ul> -->
+
+<div class="row">
+	<div class="col-md-6" *ngFor = "let checking of choices_1">
+		<mat-chip-list>
+			<mat-chip color="warn" selected="true">{{checking.name}}</mat-chip>
+		</mat-chip-list>
+<!-- 		<mat-checkbox class="example-margin">{{checking.name}}</mat-checkbox> -->
+	</div><br>
+	<div class="col-md-6" *ngFor = "let social_factor of choices_2">
+		<mat-chip-list>
+			<mat-chip color="warn" selected="true">{{social_factor.name}}</mat-chip>
+		</mat-chip-list>
+		<!-- <mat-checkbox class="example-margin" >{{social_factor.name}}</mat-checkbox> -->
+	</div><br>
+
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-6" *ngFor = "let social_factor of choices_3">
+		<mat-chip-list>
+			<mat-chip color="warn" selected="true">{{social_factor.name}}</mat-chip>
+		</mat-chip-list>
+<!-- 		<mat-checkbox class="example-margin">{{social_factor.name}}</mat-checkbox> -->
+	</div><br>
+	<div class="col-md-6" *ngFor = "let social_factor of choices">
+		<mat-chip-list>
+			<mat-chip color="warn" selected="true">{{social_factor.name}}</mat-chip>
+		</mat-chip-list>
+<!-- 		<mat-checkbox class="example-margin">{{social_factor.name}}</mat-checkbox> -->
+	</div><br>
+</div>

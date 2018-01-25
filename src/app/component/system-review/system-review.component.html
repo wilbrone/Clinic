@@ -1,0 +1,91 @@
+<div *ngFor="let folder of physical_exams">
+	<div class="row">
+	<div class="col-md-6">
+		<div *ngIf="folder.hematologic">
+		<em>Hematologic:</em>
+			<ul class="csv" *ngFor="let list of folder.hematologic">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		</div>
+		<div *ngIf="folder.endocrine">
+		<em>Endocrine:</em>
+			<ul class="csv" *ngFor="let list of folder.endocrine">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		</div>
+		<em>Musculoskeletal:</em>
+			<ul class="csv" *ngFor="let list of folder.musculoskeletal">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Psychiatric:</em>
+			<ul class="csv" *ngFor="let list of folder.psychiatric">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Neurologic:</em>
+			<ul class="csv" *ngFor="let list of folder.neurologic">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>General Tract Female:</em>
+			<ul class="csv" *ngFor="let list of folder.genital_tract_female">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>General Tract Male:</em>
+			<ul class="csv" *ngFor="let list of folder.genital_tract_male">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Urinary:</em>
+			<ul class="csv" *ngFor="let list of folder.urinary">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Gastrointestinal:</em>
+			<ul class="csv" *ngFor="let list of folder.gastrointestinal">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Pulmonary:</em>
+			<ul class="csv" *ngFor="let list of folder.pulmonary">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>	
+		
+	</div>
+	<div class="col-md-6">
+		<em>Neck:</em>
+			<ul class="csv" *ngFor="let list of folder.neck">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Mouth and Throat:</em>
+			<ul class="csv" *ngFor="let list of folder.mouth_and_throat">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Ears:</em>
+			<ul class="csv" *ngFor="let list of folder.ears">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Eyes:</em>
+			<ul class="csv" *ngFor="let list of folder.eyes">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Skin:</em>
+			<ul class="csv" *ngFor="let list of folder.skin">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+
+		<em>General:</em>
+			<ul class="csv" *ngFor="let list of folder.general">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Breasts:</em>
+			<ul class="csv" *ngFor="let list of folder.breasts">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Lymphatics:</em>
+			<ul class="csv" *ngFor="let list of folder.lymphatics">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+		<em>Cardiovascular:</em>
+			<ul class="csv" *ngFor="let list of folder.cardiovascular">
+			     <li><em>{{list.name}} ,</em></li>
+			</ul><br>
+
+	</div>
+	</div><hr>
+</div>

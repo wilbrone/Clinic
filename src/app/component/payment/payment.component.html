@@ -1,0 +1,87 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+		<mat-card class="payment-portal example-container">
+			<mat-card-header>
+				<mat-card-subtitle>
+					Billing
+				</mat-card-subtitle>
+			</mat-card-header>
+			<div class="row">
+				<div class="col-md-12">
+					<button mat-raised-button class="payment" >Paypal</button>
+				</div>
+
+			</div>
+			<mat-form-field>
+				<input matInput placeholder="Card Number">
+			</mat-form-field>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-form-field>
+						<input matInput placeholder="Expiration Date">
+					</mat-form-field>
+				</div>
+				<div class="col-md-6">
+					<mat-form-field>
+						<input matInput placeholder="CVV" [type]="hide ? 'password' : 'text'">
+						<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+					</mat-form-field>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+
+					<mat-form-field>
+						<input matInput placeholder="Postal Code">
+					</mat-form-field>
+
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<button mat-raised-button class="payment">Submit</button>
+				</div>
+
+			</div>
+
+			
+
+			
+			
+		</mat-card>
+		</div>
+		<div class="col-md-6"><br>
+			<mat-card class="example-container">
+				<div class="row">
+					<div class="col-md-12">
+						<table matSort (matSortChange)="sortData($event)">
+						  <tr>
+						    <th mat-sort-header="name">Date</th>
+						    <th mat-sort-header="calories">Payment Type</th>
+						    <th mat-sort-header="amount">Payment Amount</th>
+						    <th mat-sort-header="fat">Customer Name</th>
+						    <th mat-sort-header="carbs">Confirmation</th>
+						    <th mat-sort-header="protein">Balance</th>
+						  </tr>
+
+						  <tr *ngFor="let dessert of sortedData">
+						    <td>{{dessert.name}}</td>
+						    <td>{{dessert.calories}}</td>
+						    <td>{{dessert.amount}}</td>
+						    <td>{{dessert.fat}}</td>
+						    <td>{{dessert.carbs}}</td>
+						    <td>{{dessert.protein}}</td>
+						  </tr>
+						</table>
+						
+					</div>
+				</div>
+				
+			</mat-card>
+		</div>
+	</div>
+	
+</div>

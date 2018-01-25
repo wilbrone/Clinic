@@ -1,0 +1,550 @@
+
+<div [ngSwitch]="switch_physical_exam">
+<form (ngSubmit)="addPhysicalExam()" *ngSwitchCase="'new-physical_exam'" >
+
+<div>
+	<mat-form-field>
+		<input matInput type="text" name="institution_record_id" [(ngModel)]="new_physical_exam.institution_record_id" placeholder="Institution Record ID">
+	</mat-form-field>
+</div>
+<div>
+	<mat-form-field>
+		<input matInput type="text" name="name" [(ngModel)]="new_physical_exam.name" placeholder="other">
+	</mat-form-field>
+</div>
+<div>
+	<em>Skin</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of skin_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickSkin(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of skin_2; let i = index">
+
+        <mat-checkbox class="example-margin" (click)="onClickSkin(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of skin_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickSkin(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of skin; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickSkin(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Head</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of head_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickHead(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of head_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickHead(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of head_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickHead(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of head">
+		<mat-checkbox class="example-margin" (click)="onClickHead(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Ears</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of ears_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEars(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of ears_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEars(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of ears_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEars(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of ears; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEars(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Eyes</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of eyes_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEyes(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of eyes_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEyes(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of eyes_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEyes(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of eyes; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickEyes(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Nose</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of nose_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNose(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of nose_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNose(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of nose_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNose(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of nose">
+		<mat-checkbox class="example-margin" (click)="onClickNose(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Throat</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of throat_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickThroat(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of throat_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickThroat(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of throat_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickThroat(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of throat">
+		<mat-checkbox class="example-margin" (click)="onClickThroat(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Neck</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of neck_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNeck(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of neck_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNeck(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of neck_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNeck(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of neck">
+		<mat-checkbox class="example-margin" (click)="onClickNeck(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Nodes</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of nodes_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNodes(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of nodes_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNodes(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of nodes_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNodes(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of nodes; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNodes(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Lungs</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of lungs_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickLungs(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of lungs_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickLungs(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of lungs_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickLungs(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of lungs; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickLungs(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>CV</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of cv_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickCV(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of cv_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickCV(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of cv_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickCV(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of cv">
+		<mat-checkbox class="example-margin" (click)="onClickCV(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Breasts</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of breasts_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBreasts(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of breasts_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBreasts(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of breasts_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBreasts(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of breasts; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBreasts(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Chest</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of chest_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickChest(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of chest_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickChest(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of chest_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickChest(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of chest">
+		<mat-checkbox class="example-margin" (click)="onClickChest(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Heart</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of heart_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickHeart(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of heart_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickHeart(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of heart_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickHeart(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of heart">
+		<mat-checkbox class="example-margin" (click)="onClickHeart(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Abdomen</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of abdomen_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickAbdomen(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of abdomen_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickAbdomen(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of abdomen_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickAbdomen(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of abdomen">
+		<mat-checkbox class="example-margin" (click)="onClickAbdomen(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Back/Spine</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of back_spine_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBackSpine(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of back_spine_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBackSpine(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of back_spine_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBackSpine(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of back_spine">
+		<mat-checkbox class="example-margin" (click)="onClickBackSpine(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+
+<div>
+	<em>Extremeties</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of extremeties_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickExtremeties(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of extremeties_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickExtremeties(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of extremeties_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickExtremeties(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of extremeties; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickExtremeties(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Genetalia</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of genetalia_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGenetalia(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of genetalia_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGenetalia(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of genetalia_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGenetalia(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of genetalia">
+		<mat-checkbox class="example-margin" (click)="onClickGenetalia(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Rectal</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of rectal_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickRectal(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of rectal_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickRectal(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of rectal_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickRectal(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of rectal">
+		<mat-checkbox class="example-margin" (click)="onClickRectal(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Neurologic</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of neurologic_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNeurologic(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of neurologic_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNeurologic(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of neurologic_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickNeurologic(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of neurologic">
+		<mat-checkbox class="example-margin" (click)="onClickNeurologic(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>CN</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of cn_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickCN(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of cn_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickCN(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of cn_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickCN(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of cn">
+		<mat-checkbox class="example-margin" (click)="onClickCN(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Motor</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of motor_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickMotor(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of motor_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickMotor(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of motor_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickMotor(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of motor">
+		<mat-checkbox class="example-margin" (click)="onClickMotor(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Gait</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of gait_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGait(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of gait_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGait(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of gait_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGait(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of gait">
+		<mat-checkbox class="example-margin" (click)="onClickGait(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Spacicity</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of spacicity_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickSpacicity(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of spacicity_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickSpacicity(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of spacicity_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickSpacicity(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of spacicity">
+		<mat-checkbox class="example-margin" (click)="onClickSpacicity(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>Bulk</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of bulk_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBulk(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of bulk_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBulk(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of bulk_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickBulk(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of bulk">
+		<mat-checkbox class="example-margin" (click)="onClickBulk(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+<div>
+	<em>General Appearance</em>
+</div>
+<div class="row">
+	<div class="col-md-3" *ngFor = "let checking of general_appearance_1; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGeneralAppearance(checking.name,i)">{{checking.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of general_appearance_2; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGeneralAppearance(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of general_appearance_3; let i = index">
+		<mat-checkbox class="example-margin" (click)="onClickGeneralAppearance(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+	<div class="col-md-3" *ngFor = "let social_factor of general_appearance">
+		<mat-checkbox class="example-margin" (click)="onClickGeneralAppearance(social_factor.name,i)">{{social_factor.name}}</mat-checkbox>
+
+	</div>
+</div>
+
+<div >
+	<button mat-raised-button color="accent" type="submit" > submit exam</button>
+	
+</div>
+
+
+</form>
+</div>

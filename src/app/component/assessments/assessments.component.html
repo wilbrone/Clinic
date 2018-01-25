@@ -1,0 +1,319 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-12"><br>
+			<mat-card>
+				<div class="row">
+					<div class="col-md-2">
+						<mat-card-header>
+							<img mat-card-avatar src="assets/images/medical/009-pills-3.png">
+							<mat-card-title>
+								<h5>George Will</h5>
+							</mat-card-title>
+						</mat-card-header>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Age: {{patient_info.age}}</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Code Status: {{patient_info.code_status}}</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">DOB: 01/08/1993</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Sex: Male</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Dosing weight: 90.9 kg</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">MRN: 6272818</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Location: RM 234</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Last Visit: 01/12/17 - P</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Physician: Bill Adler, DO</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Tags: A</div>
+						</div>
+					</div>
+				</div>
+
+			</mat-card>
+		</div>
+	</div><br>
+
+	<mat-tab-group>
+
+		<mat-tab label="Home">
+		<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<mat-card>
+						<mat-card-subtitle>
+							History of Present Illness
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+							<form (ngSubmit)="addHPI()">
+								<div class="row">
+								<div class="col-md-6">
+									<div class="row">
+										<mat-card-content>
+									
+											<mat-card-content>
+											  <mat-form-field>
+											    <input matInput type="text" name="institution_record_id" [(ngModel)]="new_hpi.institution_record_id" placeholder="Institution Record ID">
+											  </mat-form-field>
+
+											  <mat-form-field>
+											    <input matInput type="text" name="context" [(ngModel)]="new_hpi.context" placeholder="context">
+											  </mat-form-field>
+											  <mat-form-field>
+												  <mat-select placeholder="severity of pain" name="severity_of_pain" [(ngModel)]="new_hpi.severity_of_pain">
+												  	<mat-option *ngFor="let severity_of_pain of pain_severities" [value]="severity_of_pain.name">{{severity_of_pain.name}}
+												  	</mat-option>
+												  </mat-select>
+											  </mat-form-field><br>
+											  <mat-form-field>
+											    <input matInput type="text" name="location_of_pain" [(ngModel)]="new_hpi.location_of_pain" placeholder="location of pain">
+											  </mat-form-field>
+											 
+
+											</mat-card-content>
+										</mat-card-content>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row">
+										<mat-card-content>
+									
+											<mat-card-content>
+											  <mat-form-field>
+											    <input matInput type="text" name="onset_duration" [(ngModel)]="new_hpi.onset_duration" placeholder="onset duration">
+											  </mat-form-field>
+											  <mat-form-field>
+											    <input matInput type="text" name="associated_symptoms" [(ngModel)]="new_hpi.associated_symptoms" placeholder="associated symptoms">
+											  </mat-form-field>
+											  <mat-form-field>
+											    <input matInput type="text" name="current_therapy" [(ngModel)]="new_hpi.current_therapy" placeholder="current therapy">
+											  </mat-form-field>
+
+											</mat-card-content>
+										</mat-card-content>
+									</div>
+								</div>
+								</div>
+								<button mat-raised-button type="submit" color="accent"> submit vitals</button>
+							</form>
+						</mat-card-content>
+					</mat-card><br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<mat-card>
+		
+							<mat-card-subtitle>
+								System Review
+							</mat-card-subtitle><hr>
+
+						<mat-card-content>
+							<app-new-system-review [patient]='patient_info'></app-new-system-review>
+	
+						</mat-card-content>
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-card>
+						<mat-card-content>
+							<app-new-immunizations [patient]='patient_info'>
+
+							</app-new-immunizations>
+						</mat-card-content><br>
+
+					</mat-card>
+				</div>
+				<div class="col-md-6">
+					<mat-card>
+						<mat-card-subtitle>
+							Family History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+						
+							<app-new-family-history [patient]='patient_info'></app-new-family-history>
+
+						      
+								
+						</mat-card-content>
+
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-card >
+						<mat-card-subtitle>
+							Social History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+							<app-new-social-history [patient]='patient_info'></app-new-social-history>
+						
+						</mat-card-content>
+					</mat-card>
+				</div>
+				<div class="col-md-6">
+					<mat-card>
+						<mat-card-subtitle>
+							Surgical History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+							<app-new-surgical-history [patient]='patient_info'></app-new-surgical-history>
+						
+						</mat-card-content>
+
+					</mat-card>
+				</div>
+			</div><br>
+		</div>
+		<div class="col-md-6">
+			
+			<div class="row">
+				<div class="col-md-12">
+					<mat-card>
+		
+							<mat-card-subtitle>
+								Physical Exam
+							</mat-card-subtitle><hr>
+
+						<mat-card-content>
+							<app-new-physical-exam [patient]='patient_info'></app-new-physical-exam>
+
+						</mat-card-content>
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+			<div class="col-md-12">
+				<mat-card>
+					
+					<mat-card-subtitle>
+							New Vitals
+					</mat-card-subtitle>
+					<form (ngSubmit)="addVitals()">
+						<div class="row">
+
+							<div class="col-md-6">
+								<mat-card-content>
+									
+									<mat-card-content>
+									  <mat-form-field>
+									    <input matInput type="text" name="institution_record_id" [(ngModel)]="vitals.institution_record_id" placeholder="Institution Record Id\D">
+									  </mat-form-field>
+
+									  <mat-form-field>
+									    <input matInput type="text" name="temperature" [(ngModel)]="vitals.temperature" placeholder="Temperature">
+									  </mat-form-field>
+
+									  <mat-form-field>
+									    <input matInput type="text" name="blood_pressure" [(ngModel)]="vitals.blood_pressure" placeholder="Blood Pressure">
+									  </mat-form-field>
+
+									  <mat-form-field>
+									    <input matInput type="text" name="heart_rate" [(ngModel)]="vitals.heart_rate" placeholder="Heart Rate">
+									  </mat-form-field>
+
+									  <mat-form-field>
+									    <input matInput type="text" name="respiratory_rate" [(ngModel)]="vitals.respiratory_rate" placeholder="Respiratory Rate">
+									  </mat-form-field>
+									</mat-card-content>
+								</mat-card-content>
+							</div>
+						<div class="col-md-6">
+						<mat-card-content>
+							
+							<mat-card-content>
+						
+							  <mat-form-field>
+							    <input matInput type="text" name="oxygen" [(ngModel)]="vitals.oxygen" placeholder="Oxygen">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="bmi" [(ngModel)]="vitals.bmi"  placeholder="BMI">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="bmi" [(ngModel)]="vitals.weight"  placeholder="Weight">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="bmi" [(ngModel)]="vitals.height"  placeholder="Height">
+							  </mat-form-field>
+							</mat-card-content>
+						</mat-card-content>
+						</div>
+						</div>
+						<button mat-raised-button type="submit" color="accent"> submit vitals</button>
+					</form>
+<!-- 				<div class="row">
+						<div class="col-md-12">
+							<mat-card>
+				
+									<mat-card-subtitle>
+										System Review
+									</mat-card-subtitle><hr>
+
+								<mat-card-content>
+									<app-new-system-review [patient]='patient_info'></app-new-system-review>
+			
+								</mat-card-content>
+							</mat-card>
+						</div>
+					</div><br>
+					 -->
+						
+					
+				</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-12">
+					<app-new-diagnoses [patient]='patient_info'></app-new-diagnoses>
+				</div><br>
+			</div><br>
+			<div class="row">
+
+				<div class="col-md-12">
+					<mat-card>
+					<app-new-current-medications [patient]='patient_info'></app-new-current-medications><br>
+					</mat-card>
+				</div>
+				
+			</div><br>
+			<div class="row">
+				
+				
+			</div><br>
+		</div>
+		</div>		
+		</mat-tab>
+
+	</mat-tab-group>
+</div>

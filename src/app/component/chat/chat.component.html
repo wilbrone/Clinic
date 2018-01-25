@@ -1,0 +1,174 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12"><br>
+			<mat-card>
+				<mat-sidenav-container >
+				<mat-sidenav color="primary" #sidenav opened="true" mode="side">
+					<!-- SIDENAV CONTENT -->
+					<div class="sidenav-content" fusePerfectScrollbar fxFlex>
+
+					    <!-- CHATS CONTENT -->
+					    <div >
+
+					        <!-- CHATS LIST-->
+					        <div class="chat-list" fxLayout="column" *ngFor="let member of staff">
+
+<!-- 					            <div matSubheader>
+					                Chats
+					            </div> -->
+
+					            <button mat-button class="contact" (click)="onAddReceiver(member.username)">
+					            	{{member.username}}
+
+<!-- 
+					            	<input type="text"  name="{{member.username}}" [(ngModel)]="newMessage.receiver" (click)="onAddReceiver(member.username)">{{member.username}} -->
+<!-- 
+					                <div fxLayout="row" fxLayoutAlign="start center">
+
+					                    <div class="avatar-wrapper" fxFlex="0 1 auto" fxLayoutAlign="center center">
+					                        <img src="" />
+					                        <mat-icon ></mat-icon>
+					                    </div>
+
+					                    <div fxLayout="row" fxFlex>
+
+					                        <div class="" fxFlex fxLayout="column" fxLayoutAlign="center start">
+					                            <div ></div>
+					                        </div>
+
+					                        <div fxLayout="column" fxLayoutAlign="center end">
+					                            <div class="contact-last-message-time">
+					                                <p  name="{{symptom.name}}" [(ngModel)]="newMessage.receiver" (click)="onAddReceiver(member.username)">{{member.username}}</p>
+					                            </div>
+					                            <div ></div>
+					                        </div>
+					                    </div>
+					                </div> -->
+					            </button><hr>
+
+					        </div>
+					        <!-- / CHATS LIST-->
+
+					        <!-- CONTACTS LIST-->
+<!-- 					        <div class="contact-list" fxLayout="column">
+
+					            <div matSubheader >
+					                Contacts
+					            </div>
+
+					            <button mat-button class="">
+
+					                <div fxLayout="row" fxLayoutAlign="start center">
+					                    <div class="avatar-wrapper" fxFlex="0 1 auto">
+					                        <img src="" class="mat-avatar avatar" alt=""/>
+					                        <mat-icon ></mat-icon>
+					                    </div>
+
+					                    <div class="" fxLayout="column" fxLayoutAlign="center start">
+					                        <div class="contact-name">contact.name</div>
+					                        <p class="contact-mood">contact.mood</p>
+					                    </div>
+					                </div>
+					            </button>
+					        </div>
+					        <!-- / CONTACTS LIST-->
+
+					        <!-- NO RESULTS MESSAGE -->
+					        <div >
+					            No results..
+					        </div>
+					        <!-- NO RESULTS MESSAGE-->
+
+					    </div> -->
+					    <!-- / CHATS CONTENT -->
+
+					</div>
+					<!-- / SIDENAV CONTENT -->
+				</mat-sidenav>
+				<mat-sidenav-content>
+
+					<mat-toolbar>  
+
+					    <span>First Row</span>
+	
+					  	<button mat-icon-button [mat-menu-trigger-for]="menu">
+					      <mat-icon>more_vert</mat-icon>
+					    </button>
+					  </mat-toolbar>
+					  <mat-menu x-position="before" #menu="matMenu">
+					    <button mat-menu-item>Option 1</button>
+					    <button mat-menu-item>Option 2</button>
+					  </mat-menu>
+
+
+
+					<div #scrollMe style="overflow: scroll; height: 300px; width: 100%">
+					<div *ngFor="let message of messages" >
+						<div class="row msg_container base_sent">
+	                        <div class="col-md-10 col-xs-10">
+	                            <div class="messages msg_sent">
+	                                <p>{{ message.return_comment }}</p>
+	                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-2 col-xs-2 avatar">
+	                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+	                        </div>
+	                    </div>
+	                    <div class="row msg_container base_receive">
+	                        <div class="col-md-2 col-xs-2 avatar">
+	                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+	                        </div>
+	                        <div class="col-md-10 col-xs-10">
+	                            <div class="messages msg_receive">
+	                                <p>{{ message.comment }}</p>
+	                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+<!-- 					    <div *ngFor="let message of messages" >
+					                    
+						    <div class="row" style="margin-left:2%;margin-top:0%  ">
+
+						      <button class="col-sm-3" class="btn">{{ message.return_comment }}</button>
+
+						    </div>
+
+						    <div class="row">
+						      <div class="col-sm-6"> </div>
+						      <button class="col-sm-3" class="btn btn-success">{{ message.comment }}</button>
+
+						    </div>
+					    
+
+					    </div> -->
+				   </div>
+
+
+					<div class="row">
+					<div class="col-md-10">
+						<div class="chat-footer" fxLayout="row" fxLayoutAlign="center center">
+							<form (ngSubmit)="onSendMessage()" class="reply-form">
+							    <mat-form-field class="" fxFlex floatPlaceholder="never">
+					                <textarea matInput #replyInput placeholder="Type and hit enter to send message"
+					                          [(ngModel)]="newMessage.comment" name="message"></textarea>
+					            </mat-form-field>
+
+					            <button mat-fab class="" type="submit" aria-label="Send message">
+					                <mat-icon>send</mat-icon>
+					            </button>
+							</form>
+						</div>
+						
+				    </div>
+
+			        </div>
+			    </mat-sidenav-content>
+			    
+			    </mat-sidenav-container>
+
+			</mat-card>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-card {
+  width: 400px;
+}
+
+
+.payment{
+	background-color: #33ccff;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+mat-card.payment-portal{
+	display: block;
+    margin-left: auto;
+    position: relative;
+
+    margin-top: 12em;
+    margin-right: auto
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #33ccff;
+}

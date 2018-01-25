@@ -1,0 +1,51 @@
+img {
+
+    width: 12em; 
+    height: 12em;
+    display: flex;
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+mat-chip {
+  max-width: 200px;
+}
+
+button img {
+    height: 12em; 
+    width: 12em; 
+/*    min-width: 12em; 
+    min-height: 12em;*/
+    display: flex;
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+a img{
+
+/*  display: block;
+  min-height: 16em;
+  margin-left: 2em;
+    margin-right: 2em;
+    display: table-cell;*/
+    vertical-align: middle;
+
+}
+
+
+h5.label {
+     font-family: 'Montserrat Medium', sans-serif;
+     font-weight: 400;
+     font-size: 1em;
+     text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+
+     width: 8em
+ }
+
+ div.container6 {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center }

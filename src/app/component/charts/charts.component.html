@@ -1,0 +1,254 @@
+<div class="container-fluid"><br>
+	<div class="row">
+		<div class="col-md-12"><br>
+			<mat-card class="chart">
+				<div class="row">
+					<div class="col-md-2">
+						<mat-card-header>
+							<img mat-card-avatar src="assets/images/medical/009-pills-3.png">
+							<mat-card-title>
+								<h5>George Will</h5>
+							</mat-card-title>
+						</mat-card-header>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Age: 45</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Code Status: DNR</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">DOB: 01/08/1993</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Sex: Male</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Dosing weight: 90.9 kg</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">MRN: 6272818</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Location: RM 234</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Last Visit: 01/12/17 - P</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Physician: Bill Adler, DO</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Tags: A</div>
+						</div>
+					</div>
+				</div>
+
+			</mat-card>
+		</div>
+	</div><br>
+
+	<div class="row">
+		<div class="col-md-6 col-sm-6">
+			<div class="row">
+				<div class="col-md-12">
+
+	 			<mat-card class="example-card">
+	 				<mat-card-subtitle>
+	 					<div class="row">
+		 					<div class="col-md-4">
+		 						Lab Results
+		 					</div>
+		 					<div class="col-md-4">
+		 						11/23/2017 at 1500
+		 					</div>
+		 					<div class="col-md-4">
+		 						< Previous
+		 					</div>
+	 					</div>
+						
+					</mat-card-subtitle><hr>
+					<mat-card-content>
+						<canvas baseChart
+						            [datasets]="lineChartData"
+						            [labels]="lineChartLabels"
+						            [legend]="lineChartLegend"
+						            [options]="lineChartOptions"
+						            [chartType]="lineChartType"
+						            (chartHover)="chartHovered($event)"
+						            (chartClick)="chartClicked($event)"></canvas>
+					</mat-card-content>
+				</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-4">
+					<mat-card>
+						<mat-card-header>
+						    <mat-card-subtitle>Head X-ray</mat-card-subtitle>
+						  </mat-card-header><hr>
+						  <img mat-card-image src="assets/images/x_rays/skull_xray.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+						</mat-card-content>
+					</mat-card>
+					
+				</div>
+				<div class="col-md-4">
+					<mat-card>
+						<mat-card-header>
+						    <mat-card-subtitle>Chest X-ray</mat-card-subtitle>
+						  </mat-card-header><hr>
+						  <img mat-card-image src="assets/images/x_rays/chest_xray.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+						</mat-card-content>
+					</mat-card>
+					
+				</div>
+				<div class="col-md-4">
+					<mat-card>
+						<mat-card-header>
+						    <mat-card-subtitle>Knee X-ray</mat-card-subtitle>
+						  </mat-card-header><hr>
+						  <img mat-card-image src="assets/images/x_rays/knee_xray.jpg" alt="Photo of a Shiba Inu">
+						<mat-card-content>
+						</mat-card-content>
+					</mat-card>
+					
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="col-md-6 col-sm-6">
+			<div class="row">
+			<div class="col-md-12">
+				<mat-card class="example-card">
+					<mat-card-subtitle>
+						<div class="row">
+		 					<div class="col-md-6">
+		 						Current Medication Orders
+		 					</div>
+		 					<div class="col-md-6">
+		 						< Previous
+		 					</div>
+	 					</div>
+					</mat-card-subtitle><hr>
+					<mat-card-content>
+
+					<mat-expansion-panel *ngFor = "let current_med of current_medications">
+					  <mat-expansion-panel-header>
+					    <mat-panel-title>
+					      {{current_med.name}} {{current_med.dosage}}
+					    </mat-panel-title>
+					    <mat-panel-description>
+					      {{current_med.frequency}}
+					    </mat-panel-description>
+					  </mat-expansion-panel-header>
+					  
+					  <mat-form-field>
+					    <input matInput placeholder="First name">
+					  </mat-form-field>
+					  
+					  <mat-form-field>
+					    <input matInput placeholder="Age">
+					  </mat-form-field>
+					</mat-expansion-panel>
+					
+					</mat-card-content>
+
+				</mat-card>
+			</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-12">
+					<mat-card class="example-card">
+						<mat-card-subtitle>
+							<div class="row">
+			 					<div class="col-md-6">
+			 						Current Lab Orders
+			 					</div>
+			 					<div class="col-md-6">
+			 						< Previous
+			 					</div>
+		 					</div>
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+
+					<mat-expansion-panel *ngFor = "let current_lab of current_labs">
+					  <mat-expansion-panel-header>
+					    <mat-panel-title>
+					      {{current_lab.name}}
+					    </mat-panel-title>
+					  </mat-expansion-panel-header>
+					  
+					  <mat-form-field>
+					    <input matInput placeholder="First name">
+					  </mat-form-field>
+					  
+					  <mat-form-field>
+					    <input matInput placeholder="Age">
+					  </mat-form-field>
+					</mat-expansion-panel>
+					</mat-card-content>
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-12">
+					<mat-card class="example-card">
+						<mat-card-subtitle>
+							<div class="row">
+			 					<div class="col-md-6">
+			 						Current X-Ray Orders
+			 					</div>
+			 					<div class="col-md-6">
+			 						< Previous
+			 					</div>
+		 					</div>
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+
+					<mat-expansion-panel *ngFor = "let current_x_ray of current_x_rays">
+					  <mat-expansion-panel-header>
+					    <mat-panel-title>
+					      {{current_x_ray.name}} 
+					    </mat-panel-title>
+					    <mat-panel-description>
+					      Type your name and age
+					    </mat-panel-description>
+					  </mat-expansion-panel-header>
+					  
+					  <mat-form-field>
+					    <input matInput placeholder="First name">
+					  </mat-form-field>
+					  
+					  <mat-form-field>
+					    <input matInput placeholder="Age">
+					  </mat-form-field>
+					</mat-expansion-panel>
+					</mat-card-content>
+					</mat-card>
+				</div>
+			</div>
+
+			
+		</div>
+
+
+	</div><br>
+
+	
+
+</div>
+
+

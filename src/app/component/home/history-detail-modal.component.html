@@ -1,0 +1,265 @@
+<h1 mat-dialog-title><mat-chip-list><mat-chip color="accent" selected="true">Add {{data.title}}</mat-chip></mat-chip-list></h1>
+
+<div mat-dialog-content>
+<h2 style="color:#00B0FF; font-size: 1.375em;">Diagnosis</h2>
+<div class="row" *ngFor = "let code of medical_history.diagnoses">
+  <div class="col-md-6">
+	  <h5>
+	    code: {{code.code}}
+	  </h5>
+
+  </div>
+  <div class="col-md-6">
+	  <h5>
+	    name: {{code.name}}
+	  </h5>
+  </div>
+	
+</div><hr>
+
+<h2 style="color:#00B0FF; font-size: 1.375em;">Patient Plan</h2>
+<div class="row">
+	 <div class="row">
+  <div class="col-md-6">
+	  <h5>
+	    code: {{medical_history.plan.treatment}}
+	  </h5>
+
+  </div>
+  <div class="col-md-6">
+	  <h5>
+	    name: {{medical_history.plan.lab}}
+	  </h5>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-6">
+	  <h5>
+	    code: {{medical_history.plan.worm_prescription}}
+	  </h5>
+
+  </div>
+  <div class="col-md-6">
+	  <h5>
+	    name: {{medical_history.plan.follow_up}}
+	  </h5>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-6">
+	  <h5>
+	    code: {{medical_history.plan.external_referral}}
+	  </h5>
+
+  </div>
+  <div class="col-md-6">
+	  <h5>
+	    name: {{medical_history.plan.date}}
+	  </h5>
+  </div>
+  </div>
+	
+</div>
+<h2 style="color:#00B0FF; font-size: 1.375em;">System Review</h2>
+	  <div class="row">
+			<div class="col-md-6">
+
+				<div class="category">Hematologic: </div>
+
+					<ul class="csv" *ngFor="let item of medical_history.system_review.hematologic">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Endocrine: </div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.endocrine">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Musculoskeletal:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.musculoskeletal">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Psychiatric:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.psychiatric">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Neurologic:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.neurologic">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>General Tract Female:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.genital_tract_female">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>General Tract Male:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.genital_tract_male">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Urinary:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.urinary">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Gastrointestinal:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.gastrointestinal">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Pulmonary:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.pulmonary">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>	
+				
+			</div>
+			<div class="col-md-6">
+				<div>Neck:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.neck">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Mouth and Throat:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.mouth_and_throat">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Ears:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.ears">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Eyes:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.eyes">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div class="category">Skin: </div>
+					- <ul class="csv" *ngFor="let item of medical_history.system_review.skin">
+					     <li>{{item.name}} ,</li>
+					</ul><br>
+
+				<div>General:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.general">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Breasts:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.breasts">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Lymphatics:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.lymphatics">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+				<div>Cardiovascular:</div>
+					<ul class="csv" *ngFor="let item of medical_history.system_review.cardiovascular">
+					     <li><em>{{item.name}} ,</em></li>
+					</ul><br>
+
+			</div>
+
+	  	
+	  </div><hr>
+	  <h2 style="color:#00B0FF; font-size: 1.375em;">Physical Exam</h2>
+	  <div class="row">
+		<div class="col-md-6">
+			<em>General Appearance:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.general_appearance">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Skin:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.skin">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Head:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.head">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Nodes:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.nodes">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Lungs:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.lungs">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>CV:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.cv">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Breasts:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.breasts">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Chest:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.chest">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Heart:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.heart">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Abdomen:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.abdomen">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Back/Spine:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.back_spine">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Extremeties:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.extremeties">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Genetalia:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.genetalia">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+		</div>
+		<div class="col-md-6">
+			<em>Ears:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.ears">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Eyes:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.eyes">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Nose:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.nose">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Throat:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.throat">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Neck:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.neck">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+
+			<em>Rectal:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.rectal">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Neurologic:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.neurologic">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>CN:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.cn">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Motor:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.motor">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Gait:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.gait">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Spacicity:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.spacicity">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+			<em>Bulk:</em>
+				<ul class="csv" *ngFor="let item of medical_history.physical_exam.bulk">
+				     <li><em>{{item.name}} ,</em></li>
+				</ul><br>
+		</div>
+	  </div><hr>
+	</div>
+<div mat-dialog-actions>
+	<button mat-raised-button color="primary" (click)="onNoClick()">No Thanks</button>
+	<button mat-raised-button color="primary" [mat-dialog-close]="data.title" cdkFocusInitial>Ok</button>
+</div>

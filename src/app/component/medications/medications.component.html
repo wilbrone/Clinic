@@ -1,0 +1,284 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12"><br>
+			<mat-card>
+				<div class="row">
+					<div class="col-md-2">
+						<mat-card-header>
+							<img mat-card-avatar src="assets/images/medical/009-pills-3.png">
+							<mat-card-title>
+								<h5>George Will</h5>
+							</mat-card-title>
+						</mat-card-header>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Age: 45</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Code Status: DNR</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">DOB: 01/08/1993</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Sex: Male</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Dosing weight: 90.9 kg</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">MRN: 6272818</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Location: RM 234</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Last Visit: 01/12/17 - P</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Physician: Bill Adler, DO</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Tags: A</div>
+						</div>
+					</div>
+				</div>
+
+			</mat-card>
+		</div>
+	</div><br>
+	<div class="row">
+		<div class="col-md-8">
+		<mat-card>
+			<mat-tab-group>
+				
+				<mat-tab label="Scheduled" class="mat-accent">
+					<mat-expansion-panel *ngFor = "let current_med of current_medications">
+						  <mat-expansion-panel-header>
+						    <mat-panel-title>
+						      {{current_med.name}} {{current_med.dosage}}
+						    </mat-panel-title>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						  </mat-expansion-panel-header>
+						  
+						  <h5>
+						    First name
+						  </h5>
+						  
+						  <h5>
+						    Age
+						  </h5>
+						  <button mat-raised-button >add </button>
+					</mat-expansion-panel>
+				</mat-tab>
+				<mat-tab label="Unscheduled">
+					<mat-expansion-panel *ngFor = "let current_med of current_medications">
+						  <mat-expansion-panel-header>
+						    <mat-panel-title>
+						      {{current_med.name}} {{current_med.dosage}}
+						    </mat-panel-title>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						  </mat-expansion-panel-header>
+						  
+						  <h5>
+						    First name
+						  </h5>
+						  
+						  <h5>
+						    Age
+						  </h5>
+						  <button mat-raised-button >add </button>
+					</mat-expansion-panel>
+				</mat-tab>
+				<mat-tab label="PRN">
+					<mat-expansion-panel *ngFor = "let current_med of current_medications">
+						  <mat-expansion-panel-header>
+						    <mat-panel-title>
+						      {{current_med.name}} {{current_med.dosage}}
+						    </mat-panel-title>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						  </mat-expansion-panel-header>
+						  
+						  <h5>
+						    First name
+						  </h5>
+						  
+						  <h5>
+						    Age
+						  </h5>
+						  <button mat-raised-button >add </button>
+					</mat-expansion-panel>
+				</mat-tab>
+				<mat-tab label="Continous Infusion(s)">
+					<mat-expansion-panel *ngFor = "let current_med of current_medications">
+						  <mat-expansion-panel-header>
+						    <mat-panel-title>
+						      {{current_med.name}} {{current_med.dosage}}
+						    </mat-panel-title>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						    <mat-panel-description>
+						      {{current_med.frequency}}
+						    </mat-panel-description>
+						  </mat-expansion-panel-header>
+						  
+						  <h5>
+						    First name
+						  </h5>
+						  
+						  <h5>
+						    Age
+						  </h5>
+						  <button mat-raised-button >add </button>
+					</mat-expansion-panel>
+				</mat-tab>
+				
+			</mat-tab-group>
+		</mat-card>
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<mat-card>
+					<mat-card-subtitle>
+						Current Medication Orders
+					</mat-card-subtitle>
+					<mat-card-content>
+						<mat-expansion-panel *ngFor = "let current_med of current_medications">
+					  <mat-expansion-panel-header>
+					    <mat-panel-title>
+					      {{current_med.name}} {{current_med.dosage}}
+					    </mat-panel-title>
+					    <mat-panel-description>
+					      {{current_med.frequency}}
+					    </mat-panel-description>
+					  </mat-expansion-panel-header>
+						  
+						  <mat-form-field>
+						    <input matInput placeholder="First name">
+						  </mat-form-field>
+						  
+						  <mat-form-field>
+						    <input matInput placeholder="Age">
+						  </mat-form-field>
+						</mat-expansion-panel>
+					</mat-card-content>
+				</mat-card>
+			</div><br>
+			<div class="row">
+				<mat-card>
+					<mat-card-subtitle>
+						Current Lab Orders
+					</mat-card-subtitle>
+					<mat-card-content *ngIf="listLab">
+						<mat-expansion-panel *ngFor = "let current_lab of current_labs">
+						  <mat-expansion-panel-header>
+						    <mat-panel-title>
+						      {{current_lab.name}}
+						    </mat-panel-title>
+						    <mat-panel-description>
+						      Once Daily
+						    </mat-panel-description>
+						    <mat-panel-description>
+						      <button mat-raised-button color="accent" (click)="labSwitch()">
+						      		New
+						      </button>
+						    </mat-panel-description>
+						  </mat-expansion-panel-header>
+							  <mat-form-field>
+							    <input matInput placeholder="First name">
+							  </mat-form-field>
+							  
+							  <mat-form-field>
+							    <input matInput placeholder="Age">
+							  </mat-form-field>
+						</mat-expansion-panel>
+
+					</mat-card-content>
+					<mat-card-content *ngIf="newLab">
+						<mat-expansion-panel *ngFor = "let current_lab of current_labs">
+						  <mat-expansion-panel-header>
+						    <mat-panel-title>
+						      {{current_lab.name}}
+						    </mat-panel-title>
+						    <mat-panel-description>
+						      old
+						    </mat-panel-description>
+
+						  </mat-expansion-panel-header>
+							<form (ngSubmit)="onSubmit()">
+
+							<mat-form-field>
+							    <input matInput placeholder="First name">
+							  </mat-form-field>
+							  
+							  <mat-form-field>
+							    <input matInput placeholder="Age">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput placeholder="Age">
+							  </mat-form-field>
+
+							  <button mat-raised-button type="submit" class="mat-accent">add </button>
+							  
+							</form>
+							
+						</mat-expansion-panel> 
+					</mat-card-content>
+				</mat-card>
+			</div><br>
+			<div class="row">
+				<mat-card>
+					<mat-card-subtitle>
+						Current X-Ray Orders
+					</mat-card-subtitle>
+					<mat-card-content>
+						<mat-expansion-panel *ngFor = "let current_x_ray of current_x_rays">
+					  <mat-expansion-panel-header>
+					    <mat-panel-title>
+					      {{current_x_ray.name}} 
+					    </mat-panel-title>
+						    <mat-panel-description>
+						      Once Daily
+						    </mat-panel-description>
+						  </mat-expansion-panel-header>
+						  
+						  <mat-form-field>
+						    <input matInput placeholder="First name">
+						  </mat-form-field>
+						  
+						  <mat-form-field>
+						    <input matInput placeholder="Age">
+						  </mat-form-field>
+						</mat-expansion-panel>
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</div>

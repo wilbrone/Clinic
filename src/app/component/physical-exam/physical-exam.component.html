@@ -1,0 +1,120 @@
+<!-- <mat-item*ngFor="let physical_exam of physical_exams">
+  <mat-item-item >
+    <mat-icon mat-item-icon>physical_exam</mat-icon>
+    <h4 *ngFor="let physical_exam.general_appearance of physical_exam">
+    	{{physical_exam.general_appearance}}
+    <h4>
+    <h4 mat-line>{{physical_exam.general_appearance}}, {{physical_exam.skin}}, {{physical_exam.head}}, {{physical_exam.ears}}, {{physical_exam.eyes}}, {{physical_exam.nose}}, {{physical_exam.throat}}, {{physical_exam.neck}}, {{physical_exam.nodes}}, {{physical_exam.lungs}}, {{physical_exam.cv}}, {{physical_exam.breasts}}, {{physical_exam.chest}}, {{physical_exam.heart}}, {{physical_exam.abdomen}}, {{physical_exam.back_spine}}, {{physical_exam.extremeties}}, {{physical_exam.genetalia}}, {{physical_exam.rectal}}, {{physical_exam.neurologic}}, {{physical_exam.cn}}, {{physical_exam.motor}}, {{physical_exam.gait}}, {{physical_exam.spacicity}}, {{physical_exam.bulk}}</h4>
+    <p mat-line> {{physical_exam.updated | date}} </p>
+  </mat-item-item>
+  <mat-divider></mat-divider>
+</mat-item> -->
+<div *ngFor="let physical_exam of physical_exams">
+	<div class="row">
+	<div class="col-md-6">
+		<em>General Appearance:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.general_appearance">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Skin:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.skin">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Head:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.head">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Nodes:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.nodes">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Lungs:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.lungs">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>CV:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.cv">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Breasts:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.breasts">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Chest:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.chest">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Heart:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.heart">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Abdomen:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.abdomen">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Back/Spine:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.back_spine">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Extremeties:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.extremeties">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Genetalia:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.genetalia">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+	</div>
+	<div class="col-md-6">
+		<em>Ears:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.ears">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Eyes:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.eyes">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Nose:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.nose">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Throat:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.throat">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Neck:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.neck">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+
+		<em>Rectal:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.rectal">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Neurologic:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.neurologic">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>CN:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.cn">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Motor:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.motor">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Gait:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.gait">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Spacicity:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.spacicity">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+		<em>Bulk:</em>
+			<ul class="csv" *ngFor="let item of physical_exam.bulk">
+			     <li><em>{{item.name}} ,</em></li>
+			</ul><br>
+	</div>
+	</div><hr>
+</div>

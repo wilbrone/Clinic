@@ -1,0 +1,113 @@
+<mat-card>
+	<mat-card-subtitle>
+		Plan
+	</mat-card-subtitle><hr>
+	<mat-card-content>
+		<form (ngSubmit)="addPlan()">
+						<div class="row">
+						<div class="col-md-6">
+						<mat-card-content>
+							
+							<mat-card-content>
+							  <mat-form-field>
+							    <input matInput type="text" name="institution_record_id" [(ngModel)]="new_plan.institution_record_id" placeholder="Institution Record ID">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="treatment" [(ngModel)]="new_plan.treatment" placeholder="Treatment">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="lab" [(ngModel)]="new_plan.lab" placeholder="Lab">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="worm_prescription" [(ngModel)]="new_plan.worm_prescription" placeholder="Worm Prescription">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="follow_up" [(ngModel)]="new_plan.follow_up" placeholder="Follow Up">
+							  </mat-form-field>
+							</mat-card-content>
+						</mat-card-content>
+						</div>
+						<div class="col-md-6">
+						<mat-card-content>
+							
+							<mat-card-content>
+						
+							  <mat-form-field>
+							    <input matInput type="text" name="external_referral" [(ngModel)]="new_plan.external_referral" placeholder="External Referral">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="previous_related_diagnosis" [(ngModel)]="new_plan.previous_related_diagnosis" placeholder="Previous Diagnosis">
+							  </mat-form-field>
+
+							  <mat-form-field>
+							    <input matInput type="text" name="current_diagnosis" [(ngModel)]="new_plan.current_diagnosis" placeholder="Current Diagnosis">
+							  </mat-form-field>
+<!-- 							  <mat-form-field>
+								  <mat-select placeholder="previous related diagnosis" name="previous_related_diagnosis" [(ngModel)]="new_plan.previous_related_diagnosis">
+								  	<mat-option *ngFor="let icd_code of icd_codes" [value]="icd_code.name">{{icd_code.name}}
+								  	</mat-option>
+								  </mat-select>
+							  </mat-form-field><br> -->
+
+	<!-- 						  <mat-form-field>
+							  	<mat-select placeholder="Select">
+							      <mat-option [(ngModel)]="new_plan.previous_related_diagnosis" value="previous_related_diagnosis" name="previous_related_diagnosis">Previous Related Diagnosis</mat-option>
+							    </mat-select>
+							  </mat-form-field> -->
+
+							  <mat-form-field>
+							    <input matInput type="text" name="name" [(ngModel)]="new_plan.name"  placeholder="notes">
+							  </mat-form-field>
+							</mat-card-content>
+						</mat-card-content>
+						</div>
+						</div>
+						<button mat-raised-button type="submit" color="accent"> submit plan</button>
+					</form>
+	</mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+	<mat-card-subtitle>
+		New Diagnosis
+	</mat-card-subtitle><hr>
+	<mat-card-content>
+		<form (ngSubmit)="addDiagnosis()">
+	<div class="row">
+		<mat-form-field>
+			<input matInput type="text" name="institution_record_id" [(ngModel)]="new_diagnosis.institution_record_id" placeholder="Institution Record Id\D">
+		</mat-form-field>
+
+		<mat-form-field>
+			<input matInput type="text" name="assessment" [(ngModel)]="new_diagnosis.assessment" placeholder="assessment">
+		</mat-form-field>
+	</div>	
+	<div class="row">
+		<div class="col-md-3" *ngFor = "let checking of choices_1">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(checking.name)">{{checking.name}}</mat-checkbox>
+
+		</div>
+		<div class="col-md-3" *ngFor = "let social_factor of choices_2">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(social_factor.name)">{{social_factor.name}}</mat-checkbox>
+
+		</div>
+		<div class="col-md-3" *ngFor = "let social_factor of choices_3">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(social_factor.name)">{{social_factor.name}}</mat-checkbox>
+
+		</div>
+		<div class="col-md-3" *ngFor = "let social_factor of choices">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(social_factor.name)">{{social_factor.name}}</mat-checkbox>
+
+		</div>
+	</div>
+
+	<button mat-raised-button color="accent" type="submit"> new family history</button>
+</form>
+	</mat-card-content>
+</mat-card>
+<br>

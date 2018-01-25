@@ -1,0 +1,134 @@
+button .contact{
+    border-top: 0.5px ridge lightgray;
+   border-left: 0.5px ridge lightgrey;
+   border-right: 0.5px ridge lightgrey;
+}
+
+.example-form {
+  min-width: 500px;
+  max-width: 500px;
+  width: 300px;
+}
+
+.msg_receive{
+    padding-left:0;
+    margin-left:0;
+}
+.msg_sent{
+    padding-bottom:20px !important;
+    margin-right:0;
+}
+.messages {
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  max-width:100%;
+}
+.messages > p {
+    font-size: 13px;
+    margin: 0 0 0.2rem 0;
+  }
+.messages > time {
+    font-size: 11px;
+    color: #ccc;
+}
+.msg_container {
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.msg_sent > time{
+    float: right;
+}
+
+form > * {
+  width: 600px;
+}
+
+/*::ng-deep .mat-input-wrapper{
+  width: 400px !important;
+}
+*/
+.example-full-width {
+  width: 100%;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.example-form-2 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+
+mat-icon{
+    font-size:24px !important;
+    height:24px !important;
+    width: 24px !important;
+    vertical-align: middle;
+}
+
+/*.mat-sidenav-container {
+                display: flex;
+                flex: 1;
+                width: 100%;
+                background: transparent;
+
+                > .mat-sidenav-content,
+                > .mat-drawer-content {
+                    display: flex;
+                    flex: 1 1 auto;
+                    min-height: 100%;
+                    height: auto;
+                }
+
+                > .mat-drawer-content {
+                    max-width: 100%;
+                }
+
+                mat-sidenav {
+                    display: flex;
+                    flex-direction: column;
+                    width: 400px;
+                    max-width: 90%;
+                    box-shadow: 0 0 1px rgba(0, 0, 0, .37);
+                    overflow: hidden;
+                }
+            }*/
+/*.chat-footer {
+            min-height: 64px;
+            max-height: 96px;
+            background-color: #F3F4F5;
+            color: rgba(0, 0, 0, 0.87);
+            border-top: 1px solid rgba(0, 0, 0, .08);
+            padding: 8px 8px 8px 16px;
+            .reply-form {
+
+                mat-form-field {
+                    margin: 0;
+                    padding-right: 16px;
+
+                    textarea {
+                        overflow: auto;
+                        max-height: 80px;
+                        transition: height 200ms ease;
+                        &.grow {
+                            height: 80px;
+                        }
+                    }
+
+                    .mat-errors-spacer {
+                        display: none;
+                    }
+                }
+
+                .mat-button {
+                    margin: 0;
+                }
+            }
+}*/

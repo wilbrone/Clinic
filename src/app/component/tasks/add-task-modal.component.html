@@ -1,0 +1,79 @@
+<!-- <mat-card>
+	<h1 mat-dialog-title>Hi {{data.start}}</h1>
+	<div mat-dialog-content>
+	  <p>What's your favorite animal?</p>
+	  <mat-form-field>
+	    <input matInput [(ngModel)]="data.title">
+	  </mat-form-field>
+	</div>
+	<div mat-dialog-actions>
+	  <button mat-button (click)="onNoClick()">No Thanks</button>
+	  <button mat-button [mat-dialog-close]="data.title" cdkFocusInitial>Ok</button>
+	</div>
+</mat-card> -->
+
+<h1 mat-dialog-title><mat-chip-list><mat-chip color="accent" selected="true">Add {{data.title}}</mat-chip></mat-chip-list></h1>
+
+<div mat-dialog-content>
+	<div class="row">
+		<div class="col-md-6">
+			<mat-form-field>
+				<input matInput placeholder="title">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput [(ngModel)]="data.start">
+				<mat-placeholder><mat-icon>today</mat-icon></mat-placeholder>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput [(ngModel)]="data.end">
+				<mat-placeholder><mat-icon>today</mat-icon></mat-placeholder>
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="location">
+				<mat-placeholder><mat-icon>place</mat-icon></mat-placeholder>
+			</mat-form-field>
+			<mat-form-field>
+				<textarea matInput placeholder="description" matTextareaAutosize matAutosizeMinRows="3"
+            matAutosizeMaxRows="5"></textarea>
+			</mat-form-field>
+			
+			
+		</div>
+  		<div class="col-md-6">
+
+			<mat-form-field>
+				<mat-select placeholder="provider">
+					<mat-option value="option">Provider</mat-option>
+				</mat-select>
+				<mat-placeholder><mat-icon>local_hospital</mat-icon></mat-placeholder>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-select placeholder="priority">
+					<mat-option value="option">Priority</mat-option>
+					
+				</mat-select>
+				<mat-placeholder><mat-icon>local_hospital</mat-icon></mat-placeholder>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-select placeholder="status">
+					<mat-option value="option">Status</mat-option>
+					
+				</mat-select>
+				<mat-placeholder><mat-icon>local_hospital</mat-icon></mat-placeholder>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-select placeholder="patient">
+					<mat-option value="option">Patient</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+</div>
+<div mat-dialog-actions>
+	<button mat-raised-button color="primary" (click)="onNoClick()">No Thanks</button>
+	<button mat-raised-button color="primary" [mat-dialog-close]="data.title" cdkFocusInitial>Ok</button>
+</div>

@@ -1,0 +1,292 @@
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Event action occurred</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Event:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
+  </div>
+</ng-template>
+<br>
+<div class="container-fluid">
+    <mat-card>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="btn-group">
+          <button mat-raised-button color="primary"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (viewDateChange)="activeDayIsOpen = false">
+            Previous
+          </button>&nbsp;
+          <button mat-raised-button color="accent"
+            mwlCalendarToday
+            [(viewDate)]="viewDate">
+            Today
+          </button>&nbsp;
+          <button mat-raised-button color="primary"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (viewDateChange)="activeDayIsOpen = false">
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group">
+          <button mat-raised-button color="primary"
+            (click)="view = 'month'"
+            [class.active]="view === 'month'">
+            Month
+          </button>&nbsp;
+          <button mat-raised-button color="accent"
+            (click)="view = 'week'"
+            [class.active]="view === 'week'">
+            Week
+          </button>&nbsp;
+          <button mat-raised-button color="primary"
+            (click)="view = 'day'"
+            [class.active]="view === 'day'">
+            Day
+          </button>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    <div [ngSwitch]="view" >
+      <mwl-calendar-month-view
+        *ngSwitchCase="'month'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        [activeDayIsOpen]="activeDayIsOpen"
+        (dayClicked)="dayClicked($event.day)"
+        (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view
+        *ngSwitchCase="'day'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-day-view>
+    </div>
+    </mat-card>
+    <br>
+<!--    <button mat-fab (click)="openDialog()">
+        <mat-icon class="md-24" aria-label="Example icon-button with a heart icon">add</mat-icon>
+      </button> -->
+    <br><br>
+</div>
+
+<div class="container-fluid">
+
+
+<mat-card class="todoapp">
+  <mat-toolbar color="primary">
+    Today's Tasks
+    <button mat-fab (click)="openDialog()" class="fab-add">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-card-content class="example-headers-align">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+            <mat-checkbox color="primary" type="checkbox">
+            <span>This is the expansion title</span>
+          </mat-checkbox>
+          
+        </mat-panel-description>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+            <span>
+               <button mat-mini-fab color="primary">
+                 <mat-icon>delete_forever</mat-icon>
+               </button>
+
+               <button mat-mini-fab color="primary">
+                 <mat-icon>mode_edit</mat-icon>
+               </button>
+             </span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
+<!--     <mat-list>
+      <form>
+        <mat-list-item class="list-item">
+
+          <mat-checkbox color="primary" type="checkbox">
+            <span>title</span>
+          </mat-checkbox>
+
+          <span>
+           <button mat-mini-fab color="primary">
+             <mat-icon>delete_forever</mat-icon>
+           </button>
+
+           <button mat-mini-fab color="primary">
+             <mat-icon>mode_edit</mat-icon>
+           </button>
+         </span>
+
+        </mat-list-item>
+      </form>
+    </mat-list> -->
+  </mat-card-content>
+</mat-card>
+
+
+<!--    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+          <button mat-raised-button color="primary">Primary</button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+        <mat-checkbox color="primary" type="checkbox" >
+            <span>This is a summary of the content</span>
+        </mat-checkbox>
+
+ 
+        </mat-panel-title>
+        <mat-panel-description>
+          This is the primary content of the panel.
+        </mat-panel-description>
+        <mat-panel-description>
+        <span>
+           <button mat-mini-fab color="primary">
+             <mat-icon>delete_forever</mat-icon>
+           </button>
+
+           <button mat-mini-fab color="primary">
+             <mat-icon>mode_edit</mat-icon>
+           </button>
+        </span>
+        </mat-panel-description>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+          <button mat-raised-button color="primary">Primary</button>
+        </mat-panel-description> -->
+      <!-- </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+          <button mat-raised-button color="primary">Primary</button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+          <button mat-raised-button color="primary">Primary</button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+          <button mat-raised-button color="primary">Primary</button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+        <mat-panel-description>
+          <button mat-raised-button color="primary">Primary</button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel> -->
+    <br><br><br>
+    
+</div>

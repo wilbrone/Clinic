@@ -1,0 +1,24 @@
+<form (ngSubmit)="addSurgHistory()">
+	<div class="row">
+		<div class="col-md-6" *ngFor = "let checking of choices_1">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(checking.name)">{{checking.name}}</mat-checkbox>
+
+		</div>
+		<div class="col-md-6" *ngFor = "let social_factor of choices_2">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(social_factor.name)">{{social_factor.name}}</mat-checkbox>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6" *ngFor = "let social_factor of choices_3">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(social_factor.name)">{{social_factor.name}}</mat-checkbox>
+
+		</div>
+		<div class="col-md-6" *ngFor = "let social_factor of surg_conditions">
+			<mat-checkbox class="example-margin" (click)="onClickChoices(social_factor.name)">{{social_factor.name}}</mat-checkbox>
+
+		</div>
+	</div>
+
+	<button mat-raised-button color="accent" type="submit"> new family history</button>
+</form>

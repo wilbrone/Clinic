@@ -1,0 +1,45 @@
+<!-- <mat-expansion-panel *ngFor="let social_factor of social_history.social_history">
+	  <mat-expansion-panel-header>
+	    <mat-panel-title>
+	      <h5>{{social_factor.name}}</h5>
+	    </mat-panel-title>
+	    <mat-panel-description>
+	      <h5>{{social_factor.date}}</h5>
+	    </mat-panel-description>
+
+	  </mat-expansion-panel-header>
+	  <div class="row">
+	  <div class="col-md-6">
+	  <h5>
+	    name: {{social_factor.name}}
+	  </h5>
+
+	  </div>
+	  <div class="col-md-6">
+	  <h5>
+	    date: {{social_factor.date}}
+	  </h5>
+	  </div>
+	  	
+	  </div>
+	  
+	  
+	</mat-expansion-panel> -->
+
+<div class="row">
+	<div class="col-md-12" *ngFor = "let checking of choices_1">
+		<mat-chip-list>
+			<mat-chip color="warn" selected="true">{{checking.name}}</mat-chip>
+		</mat-chip-list>
+<!-- 		<mat-checkbox class="example-margin">{{checking.name}}</mat-checkbox> -->
+	</div>
+
+</div><br>
+<div class="row">
+	<div class="col-md-12" *ngFor = "let social_factor of social_history">
+		<mat-chip-list>
+			<mat-chip color="warn" selected="true">{{social_factor.name}}</mat-chip>
+		</mat-chip-list>
+		<!-- <mat-checkbox class="example-margin" >{{social_factor.name}}</mat-checkbox> -->
+	</div>
+</div>

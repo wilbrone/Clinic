@@ -1,0 +1,48 @@
+<mat-card>
+						<mat-card-subtitle>
+							Current Medications
+						</mat-card-subtitle><hr>
+						<mat-card-content *ngFor="let medication of medications">
+							<mat-expansion-panel>
+							  <mat-expansion-panel-header>
+							    <mat-panel-title>
+							      <h5>{{medication.institution_record_id}}</h5>
+							    </mat-panel-title>
+							    <mat-panel-description>
+							      <h5>{{medication.name}}</h5>
+							    </mat-panel-description>
+<!-- 							    <mat-panel-description>
+							      <h5>{{medication.prescriber}}</h5>
+							    </mat-panel-description> -->
+							    <mat-panel-description>
+							      <h5>{{medication.date}}</h5>
+							    </mat-panel-description>
+
+							  </mat-expansion-panel-header>
+							  <div class="row">
+
+							  <div class="col-md-6">
+							    <h5 style="color:#00B0FF; font-size: 0.875em;">Over The Counter :</h5> <em *ngFor="let choice of medication.otc_choices">{{choice.name}} ,</em>
+							  </div>
+							  <div class="col-md-6">
+							    Medication status :{{ medication.status }}
+							  </div>
+							  </div><br>
+							  <div class="row">
+
+							  <div class="col-md-6">
+							    Dosage :{{ medication.dosage }}
+							  </div>
+
+
+							  <div class="col-md-6">
+							    Reason :{{ medication.reason_for_taking }}
+							  </div>
+							  </div>
+
+							  
+							  
+							  
+							</mat-expansion-panel>
+						</mat-card-content>
+					</mat-card>

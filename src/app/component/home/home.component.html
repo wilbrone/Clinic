@@ -1,0 +1,320 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-12"><br>
+			<mat-card>
+				<div class="row">
+					<div class="col-md-2">
+						<mat-card-header>
+							<img mat-card-avatar src="assets/images/medical/009-pills-3.png">
+							<mat-card-title>
+								<h5>George Will</h5>
+							</mat-card-title>
+						</mat-card-header>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Age: {{patient_info.age}}</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Code Status: {{patient_info.code_status}}</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">DOB: 01/08/1993</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Sex: Male</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Dosing weight: 90.9 kg</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">MRN: 6272818</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Location: RM 234</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Last Visit: 01/12/17 - P</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="patient_info">Physician: Bill Adler, DO</div>
+						</div>
+						<div class="row">
+							<div class="patient_info">Tags: A</div>
+						</div>
+					</div>
+				</div>
+
+			</mat-card>
+		</div>
+	</div><br>
+
+	<mat-tab-group>
+
+		<mat-tab label="Home">
+		<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+<!-- 			<div class="col-md-6"> -->
+				<mat-card>
+					<div class="row">
+						<div class="col-md-3">
+							<mat-card-subtitle>
+								Vitals
+							</mat-card-subtitle>
+						</div>
+						<div class="col-md-7">
+							<mat-card-subtitle>
+								Last reading: 01/23/17 at 1500
+							</mat-card-subtitle>
+						</div>
+						<div class="col-md-2">
+							<mat-card-subtitle>
+								< Previous
+							</mat-card-subtitle>
+						</div>
+					
+					</div><hr>
+					<div class="row">
+						<div class="col-md-2">
+							
+								<h5>Temp</h5>
+							
+
+							<mat-card-content>
+								<p class="vitals">97.9</p>
+							</mat-card-content>
+						</div>
+						<div class="col-md-2">
+						
+								<h5>Blood Pr.</h5>
+				
+
+							<mat-card-content>
+								<p class="vitals">97.9</p>
+							</mat-card-content>
+						</div>
+						<div class="col-md-2">
+
+							<h5>Heart Rate</h5>
+						<mat-card-content>
+							<p class="vitals">140/80</p>
+						</mat-card-content>
+
+
+						</div>
+						<div class="col-md-2">
+				
+								<h5>Resp Rate</h5>
+			
+
+							<mat-card-content>
+								<p class="vitals">81</p>
+							</mat-card-content>
+						</div>
+						<div class="col-md-2">
+							
+								<h5>Oxygen</h5>
+							
+
+							<mat-card-content>
+								<p class="vitals">18</p>
+							</mat-card-content>
+						</div>
+						<div class="col-md-2">
+							
+								<h5>BMI</h5>
+							
+
+							<mat-card-content>
+								<p class="vitals">24</p>
+							</mat-card-content>
+						</div>
+					</div><hr>
+					<div>
+						<mat-card-content>
+							<canvas baseChart
+							            [datasets]="lineChartData"
+							            [legend]="lineChartLegend"
+							            [labels]="lineChartLabels"
+							            [options]="lineChartOptions"
+							            [chartType]="lineChartType"
+							            (chartHover)="chartHovered($event)"
+							            (chartClick)="chartClicked($event)"></canvas>
+						</mat-card-content>
+					</div><hr>
+				
+					
+				</mat-card>
+			</div><br>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-card [ngSwitch]="switch_immunizations">
+						<mat-card-content>
+							<app-immunizations [patient]='patient_info' *ngSwitchCase="'immunizations'"></app-immunizations>
+						</mat-card-content><br>
+
+					</mat-card>
+				</div>
+				<div class="col-md-6">
+					<mat-card [ngSwitch]="switch_fam_history">
+						<mat-card-subtitle>
+							Family History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+							<app-family-history [patient]='patient_info' *ngSwitchCase="'fam_history'"></app-family-history>
+						</mat-card-content>
+
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-card [ngSwitch]="switch_soc_history">
+						<mat-card-subtitle>
+							Social History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+							<app-social-history [patient]='patient_info' *ngSwitchCase="'soc_history'"></app-social-history>
+						</mat-card-content>
+					</mat-card>
+				</div>
+				<div class="col-md-6">
+					<mat-card [ngSwitch]="switch_surg_history">
+						<mat-card-subtitle>
+							Surgical History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+							<app-surgical-history [patient]='patient_info' *ngSwitchCase="'surg_history'"></app-surgical-history>			
+						</mat-card-content>
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-card>
+						<mat-card-subtitle>
+							Developmental History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+						</mat-card-content>
+					</mat-card>
+					
+				</div>
+				<div class="col-md-6">
+					<mat-card>
+						<mat-card-subtitle>
+							Birth/Pregnancy History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+						</mat-card-content>
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-6">
+					<mat-card>
+						<mat-card-subtitle>
+							Nutritional History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+						</mat-card-content>
+					</mat-card>
+				</div>
+				<div class="col-md-6">
+					
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-md-6" [ngSwitch]="switch_mode">
+			<div class="row" *ngSwitchCase="'view'">
+				<div class="col-md-12">
+					<mat-card>
+						<mat-card-subtitle>
+							Problem List/ Diagnoses History
+						</mat-card-subtitle><hr>
+						<mat-card-content>
+						<app-diagnoses [patient]='patient_info'></app-diagnoses>
+						<hr>
+						</mat-card-content>		      
+					</mat-card>
+				</div>
+			</div><br>
+			<div class="row" [ngSwitch]="switch_meds">
+			
+				<div class="col-md-12" *ngSwitchCase="'meds'">
+					<mat-card>
+					<app-current-medications [patient]='patient_info'></app-current-medications><br>
+						<button mat-raised-button color="accent"(click)="change(31)"> new medication </button>
+					</mat-card>
+				</div>
+				
+			</div><br>
+			<div class="row">
+				
+				<div class="col-md-12">
+
+					<mat-card>
+						<mat-card-subtitle>
+							Current Medical Conditions
+						</mat-card-subtitle><hr>
+
+						<mat-card-content>
+						<mat-horizontal-stepper [linear]="isLinear">
+						  <mat-step [stepControl]="firstFormGroup">
+						    <form [formGroup]="firstFormGroup">
+						      <ng-template matStepLabel>initial malaria diagnosis</ng-template>
+						      	<ul>
+						      		<li>symptoms check</li>
+						      		<li>lab tests</li>
+						      	</ul>
+						      <div>
+						        <button mat-button matStepperNext>Next</button>
+						      </div>
+						    </form>
+						  </mat-step>
+						  <mat-step [stepControl]="secondFormGroup">
+						    <form [formGroup]="secondFormGroup">
+						      <ng-template matStepLabel>cerebral malaria</ng-template>
+						      <ul>
+					      		<li>symptoms check</li>
+					      		<li>lab tests</li>
+					      	</ul>
+						      <div>
+						        <button mat-button matStepperPrevious>Back</button>
+						        <button mat-button matStepperNext>Next</button>
+						      </div>
+						    </form>
+						  </mat-step>
+						  <mat-step>
+						    <ng-template matStepLabel>admission</ng-template>
+						    	<ul>
+						      		
+						      		<li>lab tests</li>
+						      		<li>IV chloroquinone</li>
+						      	</ul>
+						    <div>
+						      <button mat-button matStepperPrevious>Back</button>
+						    </div>
+						  </mat-step>
+						</mat-horizontal-stepper>
+						</mat-card-content>
+					</mat-card>
+				</div>
+			</div><br>
+		</div>
+		</div>		
+		</mat-tab>
+
+	</mat-tab-group>
+</div>

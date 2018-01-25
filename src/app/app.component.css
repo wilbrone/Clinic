@@ -1,0 +1,14 @@
+mat-icon{
+    font-size:48px !important;
+    height:48px !important;
+    width: 48px !important;
+}
+
+.my-content{
+	min-height: 750px
+}
+
+mat-sidenav{
+
+	min-width: 204px;
+}

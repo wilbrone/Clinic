@@ -1,0 +1,12 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "588217473254.dkr.ecr.us-east-2.amazonaws.com/xelpha_ui:latest",
+        "Update": "true"
+    },
+    "Ports": [{
+          "ContainerPort": 80
+        }
+    ]
+
+}

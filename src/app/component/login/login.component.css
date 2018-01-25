@@ -1,0 +1,28 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .vl {
+    border-left: 0.5px solid rgba(0, 0, 0, 0.349);
+    height: 380px;
+}
+h1:before {
+    content: 'XELPHA';
+    color: #DE5C07;
+    font-size: 70px;
+}
+h1:after {
+    content: 'health';
+    color: #14CF82;
+    font-size: 70px;
+}
+
+form button {
+  background-color:#DE5C07!important;
+  color: white!important;
+}

@@ -1,0 +1,32 @@
+<mat-expansion-panel *ngFor = "let medical_history of medical_histories">
+	  <mat-expansion-panel-header>
+	    <mat-panel-title>
+	      <h5>{{medical_history.institution_record_id}}</h5>
+	    </mat-panel-title>
+	    <mat-panel-description>
+	      <h5>{{medical_history.date}}</h5>
+	    </mat-panel-description>
+	    <mat-panel-description>
+	    	<button mat-raised-button (click)="openDialog(medical_history)" color="accent">Record Details</button>
+	    </mat-panel-description>
+
+	  </mat-expansion-panel-header>
+	  
+	  <h2 style="color:#00B0FF; font-size: 1.375em;" *ngIf="medical_history.hist_of_present_illness">Chief Complaint</h2>
+	  <div class="row" *ngIf="medical_history.hist_of_present_illness">
+		  <div class="col-md-6">
+			  <h5>
+			    name: {{medical_history.hist_of_present_illness.context}}
+			  </h5>
+
+		  </div>
+		  <div class="col-md-6">
+			  <h5>
+			    date: {{medical_history.hist_of_present_illness.date}}
+			  </h5>
+		  </div>
+	  	
+	  </div><hr>
+
+	  	  
+</mat-expansion-panel>
